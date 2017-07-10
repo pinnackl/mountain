@@ -22,10 +22,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="mountain-icons.html">
 
-<link rel="lazy-import" href="mountain-view1.html">
-<link rel="lazy-import" href="mountain-view2.html">
-<link rel="lazy-import" href="mountain-view3.html">
-<link rel="lazy-import" href="mountain-view404.html">
+<link rel="lazy-import" href="mountain-articles/mountain-articles.html">
+<link rel="lazy-import" href="mountain-comments/mountains-comments.html">
+<link rel="lazy-import" href="mountain-pages/mountain-pages.html">
+<link rel="lazy-import" href="mountain-users/mountain-users.html">
+<link rel="lazy-import" href="mountain-view404/mountain-view404.html">
 
 <dom-module id="mountain-app">
   <template>
@@ -80,9 +81,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <app-drawer id="drawer" slot="drawer">
         <app-toolbar>Menu</app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="view1" href="view1">View One</a>
-          <a name="view2" href="view2">View Two</a>
-          <a name="view3" href="view3">View Three</a>
+          <a name="users" href="users">Users</a>
+          <a name="articles" href="articles">Articles</a>
+          <a name="pages" href="pages">Pages</a>
+          <a name="comments" href="comments">Comments</a>
         </iron-selector>
       </app-drawer>
 
@@ -101,9 +103,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             attr-for-selected="name"
             fallback-selection="view404"
             role="main">
-          <mountain-view1 name="view1"></mountain-view1>
-          <mountain-view2 name="view2"></mountain-view2>
-          <mountain-view3 name="view3"></mountain-view3>
+          <mountain-users name="users"></mountain-users>
+          <mountain-articles name="articles"></mountain-articles>
+          <mountain-pages name="pages"></mountain-pages>
+          <mountain-comments name="comments"></mountain-comments>
           <mountain-view404 name="view404"></mountain-view404>
         </iron-pages>
       </app-header-layout>
@@ -150,8 +153,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         }
 
         // If no page was found in the route data, page will be an empty string.
-        // Deault to 'view1' in that case.
-        this.page = page || 'view1';
+        // Deault to 'users' in that case.
+        this.page = page || 'users';
 
         // Close a non-persistent drawer when the page & route are changed.
         if (!this.$.drawer.persistent) {
@@ -161,7 +164,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       _pageChanged(page) {
         // Load page import on demand. Show 404 page if fails
-        var resolvedPageUrl = this.resolveUrl('mountain-' + page + '.html');
+        var resolvedPageUrl = this.resolveUrl('mountain-' + page + '/mountain-' + page + '.html');
+        console.log(resolvedPageUrl);
         Polymer.importHref(
             resolvedPageUrl,
             null,

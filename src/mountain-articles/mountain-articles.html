@@ -8,10 +8,10 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
-<link rel="import" href="../bower_components/polymer/polymer-element.html">
-<link rel="import" href="shared-styles.html">
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../shared-styles.html">
 
-<dom-module id="mountain-view1">
+<dom-module id="mountain-articles">
   <template>
     <style include="shared-styles">
       :host {
@@ -22,18 +22,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
 
     <div class="card">
-      <div class="circle">1</div>
-      <h1>View One</h1>
+      <div class="circle">2</div>
+      <h1>Articles</h1>
       <p>Ut labores minimum atomorum pro. Laudem tibique ut has.</p>
       <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
     </div>
   </template>
 
   <script>
-    class MountainView1 extends Polymer.Element {
-      static get is() { return 'mountain-view1'; }
+    class MountainArticles extends Polymer.Element {
+      static get is() { return 'mountain-articles'; }
     }
 
-    window.customElements.define(MountainView1.is, MountainView1);
+    window.customElements.define(MountainArticles.is, MountainArticles);
   </script>
 </dom-module>
