@@ -13,8 +13,12 @@
     "iron-pages": "PolymerElements/iron-pages#2.0-preview",
     "iron-selector": "PolymerElements/iron-selector#2.0-preview",
     "paper-icon-button": "PolymerElements/paper-icon-button#2.0-preview",
+    "paper-toast": "PolymerElements/paper-toast#^2.0.0",
     "polymer": "Polymer/polymer#^2.0.0-rc.3",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0-rc.7"
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0-rc.7",
+    "vaadin-grid": "vaadin/vaadin-grid#^2.0.3",
+    "paper-checkbox": "PolymerElements/paper-checkbox#^2.0.0",
+    "horizon-client": "git@github.com:pinnackl/horizon-client.git"
   },
   "resolutions": {
     "polymer": "^2.0.0-rc.3"

@@ -22,8 +22,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="mountain-icons.html">
 
+<link rel="import" href="polymerhori/horizon-app.html">
+<link rel="import" href="mountain-horizon/mountain-horizon.html">
+<link rel="import" href="polymerhori/horizon-query.html">
+<link rel="import" href="polymerhori/horizon-document.html">
+<link rel="import" href="polymerhori/horizon-auth.html">
+<link rel="import" href="mountain-data/mountain-data.html">
+
 <link rel="lazy-import" href="mountain-articles/mountain-articles.html">
-<link rel="lazy-import" href="mountain-comments/mountains-comments.html">
+<link rel="lazy-import" href="mountain-comments/mountain-comments.html">
 <link rel="lazy-import" href="mountain-pages/mountain-pages.html">
 <link rel="lazy-import" href="mountain-users/mountain-users.html">
 <link rel="lazy-import" href="mountain-view404/mountain-view404.html">
@@ -68,6 +75,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         font-weight: bold;
       }
     </style>
+
+    <mountain-horizon></mountain-horizon>
+    <mountain-data id="mountainData" signed-in="{{signedIn}}" rights="{{rights}}" user="{{horizonUser}}" horizon-error="{{horizonError}}"
+      horizon-success="{{horizonSuccess}}">
+    </mountain-data>
 
     <app-location route="{{route}}"></app-location>
     <app-route
